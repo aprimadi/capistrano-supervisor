@@ -2,13 +2,13 @@ namespace :supervisord do
   desc 'Reloads supervisord'
   task :reload do
     on roles fetch(:supervisord_reload_roles) do
-      execute "supervisorctl reload"
+      execute "sudo supervisorctl reload"
     end
   end
   desc 'Restarts supervisord'
   task :restart do
     on roles fetch(:supervisord_restart_roles) do
-      execute "supervisorctl restart"
+      execute "sudo supervisorctl restart"
     end
   end
 end
